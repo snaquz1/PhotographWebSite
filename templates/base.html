@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "css/main.css" %}">
+</head>
+<body>
+<nav>
+    <a href="/">Главная</a>
+    <a href="/examples">Примеры работ</a>
+    <a href="/aboutme">Больше обо мне</a>
+    <a href="/contacts">Связаться со мной</a>
+</nav>
+<hr>
+
+
+{% block body %}{% endblock %}
+</body>
+</html>
