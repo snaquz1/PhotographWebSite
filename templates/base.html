@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static "css/main.css" %}">
+    {% block head %}{% endblock %}
 </head>
 <body>
 <nav>
@@ -12,6 +13,7 @@
     <a href="/examples">Примеры работ</a>
     <a href="/aboutme">Больше обо мне</a>
     <a href="/contacts">Связаться со мной</a>
+    <a href="/admin">Админка</a>
 </nav>
 <hr>
 

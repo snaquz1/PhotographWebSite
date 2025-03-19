@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/albumcentrilizer.css' %}">
+{% endblock %}
+{% block title %}Примеры работ{% endblock %}
+
+{% block body %}
+    <h1>Примеры работ</h1>
+    <p>Здесь вы можете посмотреть мои работы</p>
+    {% for album in albums %}
+        <div class="album-container">
+    <img width="500" height="300" class="album-image" src="{{ album.cover.url }}" alt="{{ album.title }}">
+    <a href="/album/{{ album.id }}" class="album-title">{{ album.title }}</a>
+</div>
+    {% endfor %}
+
+{% endblock %}
