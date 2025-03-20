@@ -1,5 +1,5 @@
 import datetime
-
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 # Create your models here.
@@ -7,7 +7,15 @@ from django.db import models
 class Rewiew(models.Model):
     name = models.CharField(max_length=100)
     text = models.TextField()
-    rate = models.IntegerField()
+    date = models.DateField(default=datetime.date.today)
+    rate = models.IntegerField(
+        validators=[
+            MinValueValidator(1),
+            MaxValueValidator(5),
+        ]
+    )
+    def __str__(self):
+        return self.name
 
 class Album(models.Model):
     title = models.CharField(max_length=100)

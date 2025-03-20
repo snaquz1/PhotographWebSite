@@ -1,0 +1,14 @@
+.reviews{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review{
+    border: 1px solid white;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(14, 17, 72, 0.87);
+    width: 90%;
+}

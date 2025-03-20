@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Отзывы{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/reviews.css' %}">
+{% endblock %}
+
+{% block body %}
+    <h1>Отзывы</h1>
+    <div class="reviews">
+    {% for review in reviews %}
+        <div class="review">
+        <h2>{{ review.name }} - {{ review.rate }}/5 </h2>
+        <p>{{ review.date }}</p>    
+            <hr>
+        <h3>{{ review.text }}</h3>
+        </div>
+    {% endfor %}
+    </div>
+    
+{% endblock %}

@@ -13,3 +13,7 @@ def album(request, album_id):
     album = Album.objects.get(id=album_id)
     photos = Photo.objects.filter(album=album)
     return render(request, "album.html", context={"album": album, "photos": photos})
+
+def reviews(request):
+    reviews = Rewiew.objects.all().order_by("-date")
+    return render(request, "reviews.html", context={"reviews": reviews})

@@ -19,3 +19,8 @@ a:hover{
     color: white;
     text-shadow: white 0 0 20px;
 }
+
+img{
+    user-select: none;
+    -webkit-user-drag: none;
+}

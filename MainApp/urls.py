@@ -7,4 +7,5 @@ urlpatterns = [
     path("", main, name="main"),
     path("examples", examples),
     path("album/<int:album_id>", album),
+    path("reviews", reviews),
 ]
