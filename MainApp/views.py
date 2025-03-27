@@ -17,3 +17,6 @@ def album(request, album_id):
 def reviews(request):
     reviews = Rewiew.objects.all().order_by("-date")
     return render(request, "reviews.html", context={"reviews": reviews})
+
+def request(request):
+    return render(request, "request.html")

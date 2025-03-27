@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Заявка на сессию{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'css/form.css' %}">{% endblock %}
+
+{% block body %}
+    <h1>Заявка на сессию</h1>
+    <p>После отправки наш администратор свяжется с вами как можно быстрее</p>
+    <div class="form">
+    <form method="post">
+        <div class="formobjects">
+        {% csrf_token %}
+        <input class="nameinput input" type="text" name="name" placeholder="Ваше имя">
+        <input class="phoneinput input" type="text" placeholder="Ваш номер телефона">
+        <button type="submit">Отправить</button>
+        </div>
+    </form>
+    </div>
+    
+    
+{% endblock %}
