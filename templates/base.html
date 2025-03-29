@@ -13,9 +13,10 @@
     <a href="/">Главная</a>
     <a href="/examples">Примеры работ</a>
     <a href="/reviews">Отзывы</a>
-    <a href="/aboutme">Больше обо мне</a>
-    <a href="/contacts">Связаться со мной</a>
+    <a href="/request">Заявка</a>
+    {% if user.is_superuser %}
     <a href="/admin">Админка</a>
+    {% endif %}
 </nav>
 <hr>
 

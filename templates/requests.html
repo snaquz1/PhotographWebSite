@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Заявки{% endblock %}
+{% block body %}
+    {% for request in requests %}
+        <div class="request">
+            <h2>Имя:{{ request.name }}</h2> <h2>Телефон:{{ request.phone }}</h2> <h2>Дата:{{ request.datetime }}</h2>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}

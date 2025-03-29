@@ -24,3 +24,7 @@ img{
     user-select: none;
     -webkit-user-drag: none;
 }
+
+h1{
+    text-shadow: 0 0 10px #00ffcc;
+}

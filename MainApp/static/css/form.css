@@ -1,22 +1,66 @@
-.form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #00ffcc; /* Neon effect */
 }
 
-.formobjects{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+
+
+.form {
+    background-color: rgba(30, 30, 30, 0.8); /* Semi-transparent background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5); /* Neon shadow */
 }
 
-.input{
-    width: 300px;
-    height: 30px;
-    font-size: 25px;
-    background-color: #647fc7;
+.formobjects {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between inputs */
+}
 
+.input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1em;
+    background-color: #2a2a2a; /* Input background */
+    color: #ffffff; /* Input text color */
+    box-shadow: 0 0 5px rgba(0, 255, 204, 0.5); /* Neon shadow */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.input:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 10px rgba(0, 255, 204, 1); /* Bright neon shadow on focus */
+}
+
+.sendbtn{
+    margin-top: 20px;
+}
+
+.sendbtn:hover{
+    background-color: #00e6b3; /* Darker button color on hover */
+    box-shadow: 0 0 15px rgba(0, 255, 204, 1); /* Bright neon shadow on hover */
+    cursor: pointer;
+}
+
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    background-color: #00ffcc; /* Button color */
+    color: #1a1a1a; /* Button text color */
+    font-size: 1em;
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition */
+    box-shadow: 0 0 5px rgba(0, 255, 204, 0.5); /* Neon shadow */
+}
+
+button:hover {
+    background-color: #00e6b3; /* Darker button color on hover */
+    box-shadow: 0 0 15px rgba(0, 255, 204, 1); /* Bright neon shadow on hover */
 }

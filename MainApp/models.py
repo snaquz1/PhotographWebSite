@@ -36,7 +36,7 @@ class Photo(models.Model):
 class Request(models.Model):
     name = models.CharField(max_length=20)
     phone = models.CharField(max_length=20)
-    date = models.DateField(default=datetime.date.today)
+    datetime = models.DateTimeField(default=datetime.datetime.now)
 
     def __str__(self):
-        return f"{self.name} {self.date}"
+        return f"{self.name} {self.datetime}"

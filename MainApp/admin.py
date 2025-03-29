@@ -5,3 +5,4 @@ from .models import *
 admin.site.register(Rewiew)
 admin.site.register(Album)
 admin.site.register(Photo)
+admin.site.register(Request)
