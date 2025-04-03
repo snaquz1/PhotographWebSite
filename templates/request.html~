@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Заявка на сессию{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'css/form.css' %}">{% endblock %}
+
+{% block body %}
+    <h1>Заявка на сессию</h1>
+    <p>После отправки наш администратор свяжется с вами как можно быстрее</p>
+    <div class="form">
+    <form method="post" a>
+        <div class="formobjects">
+        {% csrf_token %}
+        {{ form.as_div }}
+        </div>
+        <input class="input sendbtn" type="submit" value="Отправить">
+    </form>
+    </div>
+    
+    
+{% endblock %}

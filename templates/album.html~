@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ album.title }}{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/photos.css' %}" >
+{% endblock %}
+
+{% block body %}
+    <h1>{{ album.title }}</h1>
+    <p>{{ album.date }}</p>
+    <div class="photos">
+    {% for photo in photos %}
+        <img width="50%" src="{{ photo.image.url }}">
+        <hr>
+    {% endfor %}
+    </div>
+{% endblock %}
