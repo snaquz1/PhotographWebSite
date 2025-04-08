@@ -17,6 +17,9 @@
     {% if user.is_superuser %}
     <a href="/admin">Админка</a>
     {% endif %}
+    {% if user.is_superuser %}
+    <a href="/requests">Заявки</a>
+{% endif %}
 </nav>
 <hr>
 

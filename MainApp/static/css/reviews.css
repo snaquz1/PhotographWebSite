@@ -5,10 +5,15 @@
 }
 
 .review{
-    border: 1px solid white;
-    border-radius: 12px;
     padding: 10px;
-    margin: 10px;
-    background-color: rgba(14, 17, 72, 0.87);
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1em;
+    background-color: #2a2a2a; /* Input background */
+    color: #ffffff; /* Input text color */
+    box-shadow: 0 0 5px rgba(0, 255, 204, 0.5); /* Neon shadow */
+    transition: all 0.3s ease; /* Smooth transition */
     width: 90%;
+    margin: 20px
 }
+

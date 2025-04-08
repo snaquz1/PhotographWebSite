@@ -1,7 +1,9 @@
 .album-container {
         position: relative;
         display: inline-block;
-        margin: 0 10px 10px 0;
+        margin: 0 10px 10px 0
+
+;
     }
 
 .album-title {

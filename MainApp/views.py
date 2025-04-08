@@ -21,19 +21,33 @@ def album(request, album_id):
     return render(request, "album.html", context={"album": album, "photos": photos})
 
 def reviews(request):
-    reviews = Rewiew.objects.all().order_by("-date")
-    return render(request, "reviews.html", context={"reviews": reviews})
+    if request.method == "GET":
+        form = ReviewForm()
+        review_submitted = request.session.get("review_submitted")
+        reviews = Rewiew.objects.all().order_by("-date")
+        return render(request, "reviews.html", context={"reviews": reviews, "form": form, "review_submitted": review_submitted})
+    elif request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data["name"]
+            rate = form.cleaned_data["rate"]
+            text = form.cleaned_data["text"]
+            Rewiew.objects.create(name=name, rate=rate, text=text).save()
+            request.session["review_submitted"] = True
+            return redirect("MainApp:reviews")
+
 
 def sucess(request):
-    if request.session.get("form_submitted"):
-        del request.session["form_submitted"]
+    if request.session.get("request_submitted"):
+        del request.session["request_submitted"]
         return render(request, "sucess.html")
     return HttpResponseNotFound("Не найдено")
 
 def request(request):
     form = RequestForm()
+    request_submitted = request.session.get("request_submitted")
     if request.method == "GET":
-        return render(request, "request.html", context={"form": form})
+        return render(request, "request.html", context={"form": form, "request_submitted": request_submitted})
     elif request.method == "POST":
         form = RequestForm(request.POST)
         if form.is_valid():
@@ -46,7 +60,7 @@ def request(request):
             elif name.isdigit() or contains_digit(name) or not name.isalpha():
                 return HttpResponse("Имя не должно состоять из цифр <a href='request'>Вернуться</a>")
             Request.objects.create(name=name, phone=phone).save()
-            request.session["form_submitted"] = True
+            request.session["request_submitted"] = True
             return redirect("MainApp:sucess")
 
 def requests(request):

@@ -5,10 +5,22 @@
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'css/reviews.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
 {% endblock %}
 
 {% block body %}
     <h1>Отзывы</h1>
+    {% if not review_submitted %}
+    <h2>Добавьте ваш отзыв</h2>
+    <form method="post" class="reviewform">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="input sendbtn" type="submit" value="Отправить">
+    </form>
+        {% else %}
+        <p>Вы уже написали отзыв, спасибо!</p>
+    {% endif %}
+    <hr>
     <div class="reviews">
     {% for review in reviews %}
         <div class="review">
